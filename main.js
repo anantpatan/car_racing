@@ -65,23 +65,107 @@ function my_keydown(e){
     }
 
     if(keypressed=="87"){
-        console.log("W arrow key");
+        console.log("W key");
         car2_up();
            
     }
     else if(keypressed=="83"){
-        console.log("S arrow key");
+        console.log("S key");
         car2_down();
         
     }
     else if(keypressed=="65"){
-        console.log("A arrow key");
+        console.log("A key");
         car2_left();
          
     }
     else if(keypressed=="68"){
-        console.log("D arrow key");
+        console.log("D key");
          car2_right();
          
+    }
+    if(car1_X>700){
+        console.log("Car 1 Won!!");
+        document.getElementById("game_status").innerHTML="Car 1 Won!!";
+    }
+    if(car2_X>700){
+        console.log("Car 2 Won!!");
+        document.getElementById("game_status").innerHTML="Car 2 Won!!";
+    }
+}
+
+function car1_up(){
+    if(car1_Y>=0){
+        car1_Y=car1_Y-10;
+        console.log("when up arrow is pressed;X="+car1_X+" y="+car1_Y) ;  
+        upload_bg(); 
+        upload_car1();
+        upload_car2();
+    }
+}
+function car1_down(){
+    if(car1_Y<=500){
+        car1_Y=car1_Y+10;
+        console.log("when down arrow is pressed; X="+car1_Y+" y="+car1_Y);
+        ctx.rotate(Math.PI);
+        upload_bg();
+        upload_car1();
+        upload_car2();
+    }
+}
+function car1_left(){
+    if(car1_X>=0){
+        car1_X=car1_X-10;
+        console.log("when left arrow is pressed; X="+car1_X+" y="+car1_Y);
+        upload_bg();
+        upload_car1();
+        upload_car2();
+    }
+}
+function car1_right(){
+    if(car1_X<=700){
+        car1_X=car1_X+10;
+        console.log("when right arrow pressed; X="+car1_X+" y="+car1_Y);
+        upload_bg();
+        upload_car1();
+        upload_car2();
+    }
+}
+
+function car2_up(){
+    if(car2_Y>=0){
+        car2_Y=car2_Y-10;
+        console.log("when up arrow is pressed;X="+car2_X+" y="+car2_Y) ;  
+        upload_bg(); 
+        upload_car1();
+        upload_car2();
+    }
+}
+function car2_down(){
+    if(car2_Y<=500){
+        car2_Y=car2_Y+10;
+        console.log("when down arrow is pressed; X="+car2_Y+" y="+car2_Y);
+        ctx.rotate(Math.PI);
+        upload_bg();
+        upload_car1();
+        upload_car2();
+    }
+}
+function car2_left(){
+    if(car2_X>=0){
+        car2_X=car2_X-10;
+        console.log("when left arrow is pressed; X="+car2_X+" y="+car2_Y);
+        upload_bg();
+        upload_car1();
+        upload_car2();
+    }
+}
+function car2_right(){
+    if(car2_X<=700){
+        car2_X=car2_X+10;
+        console.log("when right arrow pressed; X="+car2_X+" y="+car2_Y);
+        upload_bg();
+        upload_car1();
+        upload_car2();
     }
 }
